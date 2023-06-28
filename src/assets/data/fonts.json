@@ -1,0 +1,26 @@
+{
+"Source code pro": {
+  "name": "Source code pro",
+  "source": "http://www.google.com/fonts/specimen/Source%20Code%20Pro",
+  "id": 1
+
+},
+  "Inter": {
+    "name": "Inter",
+    "source": "http://www.google.com/fonts/specimen/Source%20Code%20Pro",
+    "id": 2
+
+  },
+  "Raleway": {
+    "name": "Raleway",
+    "source": "http://www.google.com/fonts/specimen/Source%20Code%20Pro",
+    "id": 3
+
+  },
+  "Roboto": {
+    "name": "Roboto",
+    "source": "http://www.google.com/fonts/specimen/Source%20Code%20Pro",
+    "id": 4
+
+  }
+}
