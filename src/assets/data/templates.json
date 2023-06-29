@@ -1,0 +1,26 @@
+{
+  "crisp-white": {
+    "name": "Crisp White",
+    "template":"crisp-white",
+    "id": 1,
+    "image": "/templates/crisp-white.png"
+  },
+  "cascading-cream": {
+    "name": "Cascading cream",
+    "template":"cascading-cream",
+    "id": 2,
+    "image": "/templates/cascading-cream.png"
+  },
+  "cubic-black": {
+    "name": "Cubic Black",
+    "template":"cubic-black",
+    "id": 3,
+    "image": "/templates/cubic-black.png"
+  },
+  "enfold-blue": {
+    "name": "Enfold Blue",
+    "template":"enfold-blue",
+    "id": 4,
+    "image": "/templates/enfold-blue.png"
+  }
+}

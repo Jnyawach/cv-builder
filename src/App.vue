@@ -13,6 +13,7 @@ import MainLayout from "./components/layouts/main-layout.vue";
 import {useStorage} from "@vueuse/core";
 
 const resume=useStorage('resume',{})
+const step=useStorage('step',1)
 </script>
 <style scoped>
 
