@@ -1,7 +1,7 @@
 <template>
 <div>
   <div>
-    <h1 class="text-2xl font-bold">SELECT A TEMPLATE</h1>
+    <h1 class="text-2xl font-bold text-sky-500">Select a Template</h1>
   </div>
 
   <div class="grid md:grid-cols-2 my-5 gap-2">
@@ -10,7 +10,7 @@
            class="cursor-pointer border rounded-lg shadow-lg hover:shadow-xl hover:border-sky-600"
            :class="[currentTemplate.id===template.id?'border-2 shadow-xl border-sky-600':'']"
       >
-      <h2 class="my-3 text-center text-xl font-medium">{{template.name}}</h2>
+      <h2 class="my-3 text-center  font-medium">{{template.name}}</h2>
     </div>
   </div>
 
@@ -24,7 +24,7 @@ import {useStorage} from "@vueuse/core";
 const availableTemplates=ref(templates)
 
 const resume=useStorage('resume',{})
-const currentTemplate=ref( resume.value.template? resume.value.template:availableTemplates['crisp-white'])
+const currentTemplate=ref( resume.value.template? resume.value.template:availableTemplates.value['crisp-white'])
 const selectTemplate=(template:any)=>{
   currentTemplate.value=template
   resume.value.template=template

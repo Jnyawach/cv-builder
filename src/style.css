@@ -2,8 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+.resume-label{
+    @apply  text-xs  text-gray-100 
+}
 .resume-input{
-    @apply w-full text-sm my-2 rounded-lg border border-gray-400  bg-transparent px-2 text-sm text-gray-100 focus:border-yellow-500  outline-0 block h-8
+    @apply w-full text-sm my-2 rounded-xl bg-transparent border border-gray-500  px-2  text-gray-300 focus:border-sky-600  outline-0 block h-11
 }
 
 .resume-select{
@@ -16,6 +19,7 @@
 .btn-primary-outline{
     @apply   bg-transparent text-sm text-white border border-sky-600 rounded-lg py-2  px-4 hover:bg-sky-700 transition-colors duration-700
 }
+
 
 /* width */
 ::-webkit-scrollbar {
