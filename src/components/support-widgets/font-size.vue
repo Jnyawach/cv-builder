@@ -34,13 +34,12 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {ref} from "vue";
 import { vOnClickOutside } from '@vueuse/components'
-import {useStorage} from "@vueuse/core";
+import {useResumeStore} from "../../scripts/resumeStore";
+const resumeStore=useResumeStore()
 
 //STORAGE
-const resume=useStorage('resume',{})
-const resumeFonts=resume.value?resume.value.fonts:intialSelect.value
 
 //STORAGE
 const fontSizes=ref({
@@ -52,23 +51,12 @@ const fontSizes=ref({
   "14pt": "14pt",
 })
 const dropdown=ref(false)
-
-const intialSelect=computed(()=>fontSizes.value['11pt'])
-
-const active=ref(resume.value.fontSize?resume.value.fontSize:intialSelect.value)
-
-
+const active=ref(resumeStore.fontSize)
 function selectOption(option:any){
   active.value=option
   dropdown.value=false
-  resume.value.fontSize=option
-
-
-
+  resumeStore.fontSize=option
 }
-
-
-
 const closeDrop=()=>{
   dropdown.value=false
 }

@@ -10,17 +10,20 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from "vue";
-import {useStorage} from "@vueuse/core";
-const resume=useStorage('resume',{})
+import {onMounted, ref} from "vue";
+import {useResumeStore} from "../../scripts/resumeStore";
+const resumeStore=useResumeStore()
 
-const doc_name=ref(resume.value.doc_name?resume.value.doc_name:'Untitled document')
+
+const doc_name=ref(resumeStore.doc_name)
 const showCheck=ref(false)
 
 const saveName=()=>{
-  resume.value.doc_name=doc_name.value
+  resumeStore.doc_name=doc_name.value
   showCheck.value=false
 }
+
+
 </script>
 
 <style scoped>

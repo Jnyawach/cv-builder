@@ -4,9 +4,9 @@
             class="text-xs  flex  items-center w-full h-10
             border-none rounded-lg bg-transparent px-2 py-1 w-56
     ">
-      <span class="h-4 w-2 rounded-l-full" :style="'background-color:'+active['primary']">
+      <span class="h-4 w-2 rounded-l-full" :style="'background-color:'+colorThemes.primary">
       </span>
-      <span class="h-4 w-2 rounded-r-full" :style="'background-color:'+active['secondary']">
+      <span class="h-4 w-2 rounded-r-full" :style="'background-color:'+colorThemes.secondary">
       </span>
       <span class="self-center ml-3">
 
@@ -36,7 +36,7 @@
 
           <color-picker key="primary"
               @color-change="updatePrimary"
-              :color="active['primary']"
+              :color="colorThemes.primary"
               alpha-channel="hide"
               hue-channel="hide"
               default-format="hex"
@@ -47,7 +47,7 @@
 
           <color-picker key="primary"
                         @color-change="updateSecondary"
-                        :color="active['secondary']"
+                        :color="colorThemes.secondary"
                         alpha-channel="hide"
                         hue-channel="hide"
                         default-format="hex"
@@ -62,45 +62,29 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import { ref} from "vue";
 import { vOnClickOutside } from '@vueuse/components'
-import {useStorage} from "@vueuse/core";
+import {useResumeStore} from "../../scripts/resumeStore";
 import { ColorPicker } from 'vue-accessible-color-picker'
 
 //STORAGE
-const resume=useStorage('resume',{})
-const resumeFonts=resume.value?resume.value.fonts:intialSelect.value
+const resumeStore=useResumeStore()
 
 //STORAGE
 const colorThemes=ref({
-  "primary":"#a16207",
-  "secondary":"#065f46",
+  primary:resumeStore.template.primary,
+  secondary:resumeStore.template.secondary,
 })
 const dropdown=ref(false)
 const step=ref(1) //1 for primary 2 for secondary
-
-const active=ref(colorThemes.value)
-
-
-function selectOption(option:any){
-  active.value=option
-  dropdown.value=false
-  resume.value.fontSize=option
-
-
-
-}
 const updatePrimary=(color:any)=>{
-
-  active.value['primary']=color.cssColor
-  colorThemes.value['primary']=color.cssColor
-  resume.value.colorThemes=colorThemes.value
+  colorThemes.value.primary=color.cssColor
+  resumeStore.template.primary=color.cssColor
 }
 
 const updateSecondary=(color:any)=>{
-  active.value['secondary']=color.cssColor
-  colorThemes.value['secondary']=color.cssColor
-  resume.value.colorThemes=colorThemes.value
+  colorThemes.value.secondary=color.cssColor
+  resumeStore.template.secondary=color.cssColor
 }
 
 const closeDrop=()=>{

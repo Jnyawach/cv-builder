@@ -20,14 +20,14 @@
 <script setup lang="ts">
 import templates from "../../assets/data/templates.json"
 import {ref} from "vue";
-import {useStorage} from "@vueuse/core";
+import {useResumeStore} from "../../scripts/resumeStore";
+const resumeStore=useResumeStore()
 const availableTemplates=ref(templates)
 
-const resume=useStorage('resume',{})
-const currentTemplate=ref( resume.value.template? resume.value.template:availableTemplates.value['crisp-white'])
+const currentTemplate=ref( resumeStore.template)
 const selectTemplate=(template:any)=>{
   currentTemplate.value=template
-  resume.value.template=template
+  resumeStore.template=template
 }
 </script>
 

@@ -42,27 +42,18 @@
 import {computed, ref} from "vue";
 import { vOnClickOutside } from '@vueuse/components'
 import fonts from "../../assets/data/fonts.json";
-import {useStorage} from "@vueuse/core";
-
+import {useResumeStore} from "../../scripts/resumeStore";
 //STORAGE
-const resume=useStorage('resume',{})
-const resumeFonts=resume.value?resume.value.fonts:intialSelect.value
-
-//STORAGE
+const resumeStore=useResumeStore()
 const availableFonts=ref(fonts)
 const dropdown=ref(false)
-
-const intialSelect=computed(()=>availableFonts.value['Source code pro'])
-
-const active=ref(intialSelect.value)
+const active=ref(resumeStore.font)
 
 
 function selectOption(option:any){
   active.value=option
   dropdown.value=false
-  resume.value.fonts=option
-
-
+  resumeStore.font=option
 
 }
 

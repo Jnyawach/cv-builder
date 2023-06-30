@@ -3,24 +3,32 @@
     "name": "Crisp White",
     "template":"crisp-white",
     "id": 1,
-    "image": "/templates/crisp-white.png"
+    "image": "/templates/crisp-white.png",
+    "primary":"#a16207",
+    "secondary":"#065f46"
   },
   "cascading-cream": {
     "name": "Cascading cream",
     "template":"cascading-cream",
     "id": 2,
-    "image": "/templates/cascading-cream.png"
+    "image": "/templates/cascading-cream.png",
+    "primary":"#a16207",
+    "secondary":"#065f46"
   },
   "cubic-black": {
     "name": "Cubic Black",
     "template":"cubic-black",
     "id": 3,
-    "image": "/templates/cubic-black.png"
+    "image": "/templates/cubic-black.png",
+    "primary":"#a16207",
+    "secondary":"#065f46"
   },
   "enfold-blue": {
     "name": "Enfold Blue",
     "template":"enfold-blue",
     "id": 4,
-    "image": "/templates/enfold-blue.png"
+    "image": "/templates/enfold-blue.png",
+    "primary":"#a16207",
+    "secondary":"#065f46"
   }
 }
