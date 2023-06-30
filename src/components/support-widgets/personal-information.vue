@@ -22,7 +22,7 @@
             <div>
             <label for="profession" class="resume-label">Profession:</label>
             <input v-model="personalInformation.profession" id="profession" type="text" 
-            class="resume-input">
+            class="resume-input" placeholder="e.g. Junior Architect">
             </div>
            
             
@@ -30,15 +30,18 @@
         <div class="grid  my-3 md:grid-cols-7 gap-2">
             <div class="md:col-span-3">
             <label for="city" class="resume-label">City:</label>
-            <input v-model="personalInformation.city" id="city" type="text" class="resume-input">
+            <input v-model="personalInformation.city" id="city" type="text" class="resume-input"
+            placeholder="e.g. Nairobi">
             </div>
             <div class="md:col-span-2">
             <label for="country" class="resume-label">Country:</label>
-            <input v-model="personalInformation.country" id="country" type="text" class="resume-input">
+            <input v-model="personalInformation.country" id="country" type="text" class="resume-input"
+            placeholder="e.g. Kenya">
             </div>
             <div class="md:col-span-2">
             <label for="postal_code" class="resume-label">Postal code:</label>
-            <input v-model="personalInformation.postal_code" id="postal_code" type="text" class="resume-input">
+            <input v-model="personalInformation.postal_code" id="postal_code" type="text" class="resume-input"
+            placeholder="e.g. 00100">
             </div>
             
         </div>
@@ -88,6 +91,7 @@ const personalInformation=ref({
 })
 
 onMounted(() => {
+    resume.value.personalInformation={}
     personalInformation.value=resume.value.personalInformation??''
 })
 

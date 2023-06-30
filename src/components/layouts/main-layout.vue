@@ -14,6 +14,9 @@
           <div v-if="step===2">
             <personal-information></personal-information>
           </div>
+          <div v-if="step===3">
+            <work-experience></work-experience>
+          </div>
 
         </div>
 
@@ -58,6 +61,7 @@ import {useStorage} from "@vueuse/core";
 import Navbar from "./navbar.vue";
 import ResumeTemplates from "../support-widgets/resume-templates.vue";
 import PersonalInformation from "../support-widgets/personal-information.vue";
+import WorkExperience from "../support-widgets/work-experience.vue";
 
 const step=useStorage('step',1)
 

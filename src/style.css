@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .resume-label{
-    @apply  text-xs  text-gray-100 
+    @apply  text-sm  text-gray-100
 }
 .resume-input{
     @apply w-full text-sm my-2 rounded-xl bg-transparent border border-gray-500  px-2  text-gray-300 focus:border-sky-600  outline-0 block h-11
@@ -18,6 +18,13 @@
 }
 .btn-primary-outline{
     @apply   bg-transparent text-sm text-white border border-sky-600 rounded-lg py-2  px-4 hover:bg-sky-700 transition-colors duration-700
+}
+.resume-check{
+    @apply w-5 h-5 text-sky-600 bg-gray-100 border-gray-300 rounded-full  focus:ring-0
+}
+
+.resume-textarea{
+    @apply w-full bg-transparent font-medium text-sm  rounded-xl   border border-gray-300  focus:ring-sky-600 focus:border-sky-600 block p-2
 }
 
 
