@@ -19,6 +19,10 @@
             <work-experience></work-experience>
           </div>
 
+          <div v-if="resumeStore.step===4">
+            <education-details></education-details>
+          </div>
+
         </div>
 
       </div>
@@ -36,6 +40,10 @@
       <div v-if="resumeStore.step === 3" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Education</button>
+      </div>
+      <div v-if="resumeStore.step === 4" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+        <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
+        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Courser & Certifications</button>
       </div>
       </div>
     </div>
@@ -61,6 +69,7 @@ import ResumeTemplates from "../support-widgets/resume-templates.vue";
 import PersonalInformation from "../support-widgets/personal-information.vue";
 import WorkExperience from "../support-widgets/work-experience.vue";
 import {useResumeStore} from "../../scripts/resumeStore";
+import EducationDetails from "../support-widgets/education-details.vue";
 
 const resumeStore =useResumeStore()
 

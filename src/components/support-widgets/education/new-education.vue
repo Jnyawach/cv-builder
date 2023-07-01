@@ -18,6 +18,18 @@ const workExperience=ref({
   id:uuidv4()
 })
 
+const educationHistory=ref({
+  name:'',
+  location:'',
+  degree:'',
+  study_field:'',
+  description:'',
+  start_date:'',
+  end_date:'',
+  current_education:'',
+  id:uuidv4()
+})
+
 const addRole=()=>{
   resumeStore.workExperience.push(workExperience.value)
   emits('close')
@@ -30,23 +42,26 @@ const addRole=()=>{
 
       <div class="grid md:grid-cols-2 gap-1 my-3">
         <div>
-          <label for="job_title" class="resume-label">Job title:</label>
-          <input v-model="workExperience.title" id="job_title" type="text"
-                 class="resume-input" placeholder="e.g Field Sales Agent">
+          <label for="school_name" class="resume-label">School name:</label>
+          <input v-model="educationHistory.name" id="school_name" type="text"
+                 class="resume-input" placeholder="e.g University of Nairobi">
         </div>
         <div>
-          <label for="employer" class="resume-label">Employer name:</label>
-          <input v-model="workExperience.employer" id="employer" type="text"
-                 class="resume-input" placeholder="e.g. Safaricom">
+          <label for="school_location" class="resume-label">School location:</label>
+          <input v-model="educationHistory.location" id="school_location" type="text"
+                 class="resume-input" placeholder="e.g. Nairobi, Kenya">
         </div>
 
       </div>
 
       <div class="grid  my-3 md:grid-cols-2 gap-1">
         <div>
-          <label for="city" class="resume-label">City:</label>
-          <input v-model="workExperience.city" id="city" type="text" class="resume-input"
-                 placeholder="e.g. Nairobi">
+          <label for="city" class="resume-label">Degree:</label>
+          <select>
+            <option value="">Select</option>
+            <option value="Associate of Arts">Associate of Arts</option>
+            <option value="Associate of Applied Science">Associate of Applied Science</option>
+          </select>
         </div>
         <div>
           <label for="country" class="resume-label">Country:</label>
@@ -97,7 +112,7 @@ const addRole=()=>{
       </div>
     </div>
     <div class="my-3">
-      <button type="submit" class="btn-primary btn-small">Save role</button>
+      <button type="submit" class="btn-primary btn-small">Save</button>
     </div>
   </form>
 </template>
