@@ -22,7 +22,15 @@
           <div v-if="resumeStore.step===4">
             <education-details></education-details>
           </div>
-
+          <div v-if="resumeStore.step===5">
+            <skills></skills>
+          </div>
+          <div v-if="resumeStore.step===6">
+           <course-details></course-details>
+          </div>
+          <div v-if="resumeStore.step===7">
+            <additional-sections></additional-sections>
+          </div>
         </div>
 
       </div>
@@ -43,7 +51,20 @@
       </div>
       <div v-if="resumeStore.step === 4" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
-        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Courser & Certifications</button>
+        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Skills</button>
+      </div>
+      <div v-if="resumeStore.step === 5" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+        <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
+        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Courses & Certifications</button>
+      </div>
+      <div v-if="resumeStore.step === 6" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+        <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
+        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Additional sections</button>
+      </div>
+
+      <div v-if="resumeStore.step === 7" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+        <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
+        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Preview & Download</button>
       </div>
       </div>
     </div>
@@ -70,6 +91,9 @@ import PersonalInformation from "../support-widgets/personal-information.vue";
 import WorkExperience from "../support-widgets/work-experience.vue";
 import {useResumeStore} from "../../scripts/resumeStore";
 import EducationDetails from "../support-widgets/education-details.vue";
+import CourseDetails from "../support-widgets/course-details.vue";
+import Skills from "../support-widgets/skills.vue";
+import AdditionalSections from "../support-widgets/additional-sections.vue";
 
 const resumeStore =useResumeStore()
 

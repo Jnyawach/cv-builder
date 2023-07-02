@@ -12,6 +12,7 @@
     "@tinymce/tinymce-vue": "^5.1.0",
     "@vueuse/components": "^10.2.0",
     "@vueuse/core": "^10.2.0",
+    "moment": "^2.29.4",
     "pinia": "^2.1.4",
     "uuid": "^9.0.0",
     "vue": "^3.2.47",

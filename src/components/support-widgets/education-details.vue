@@ -4,7 +4,8 @@ const resumeStore=useResumeStore()
 import {ref} from "vue";
 import NewEducation from "./education/new-education.vue";
 import ListingEducation from "./education/listing-education.vue";
-const addingEducation=ref(!resumeStore.education)
+
+const addingEducation=ref(!resumeStore.educationHistory)
 </script>
 <template>
   <div>
@@ -12,10 +13,10 @@ const addingEducation=ref(!resumeStore.education)
     <p class="my-2 font-light text-sm">Describe about your education</p>
   </div>
   <div v-if="addingEducation" class="py-3">
-   <new-education @close="addingEducation=false"></new-education>
+   <new-education @addingEducation="addingEducation=false"></new-education>
   </div>
   <div v-else>
-    <listing-education @close="addingEducation=true"></listing-education>
+    <listing-education @addingEducation="addingEducation=true"></listing-education>
   </div>
 </template>
 

@@ -139,7 +139,10 @@ const updateRole=()=>{
       </div>
     </div>
     <div class="my-3">
-      <button @click="emits('addingRole')" type="button" class="text-sky-600">Add a new role</button>
+      <button @click="emits('addingRole')" type="button" class="flex gap-2 items-center text-sky-600">
+        <svg class="h-4 fill-sky-600" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+        <span>Add a new role</span>
+      </button>
     </div>
   </div>
 

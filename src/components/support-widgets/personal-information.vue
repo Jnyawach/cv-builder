@@ -18,6 +18,19 @@
             </div>
             
         </div>
+          <div class="grid md:grid-cols-2 gap-1 my-3">
+            <div>
+              <label for="phone" class="resume-label">Phone:</label>
+              <input v-model="resumeStore.personalInformation.phone" id="phone" type="text"
+                     class="resume-input" placeholder="e.g +254712345678">
+            </div>
+            <div>
+              <label for="email" class="resume-label">Email:</label>
+              <input v-model="resumeStore.personalInformation.email" id="email" type="email"
+                     class="resume-input" placeholder="e.g mariakowaceti@gmail.com">
+            </div>
+
+          </div>
         <div class="grid  my-3">
             <div>
             <label for="profession" class="resume-label">Profession:</label>

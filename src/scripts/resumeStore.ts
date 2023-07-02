@@ -13,10 +13,14 @@ export const useResumeStore=defineStore('resumeStore',{
         fontSize:useStorage('fontSize','11px'),
         personalInformation:useStorage('personaInformation',{}),
         font:useStorage('font',fonts['Source code pro']),
-        workExperience:useStorage('workExperience',[])
-
-
-
+        workExperience:useStorage('workExperience',[]),
+        educationHistory:useStorage('educationHistory',[]),
+        skills:useStorage('skills',[]),
+        courses:useStorage('courses',[]),
+        languages:useStorage('languages',[]),
+        hobbies:useStorage('hobbies',[]),
+        references:useStorage('references',[]),
+        customSection:useStorage('customSection',[])
     }),
 
     getters:{
@@ -24,18 +28,15 @@ export const useResumeStore=defineStore('resumeStore',{
     },
 
     actions:{
-        addStep(){
+        addStep() :void{
           this.step++
         },
-        reduceStep(){
+        reduceStep() :void{
             if (this.step>1){
                 this.step--
             }
         } ,
 
-        getColorTheme(){
-
-        }
 
     }
 })
