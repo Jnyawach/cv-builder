@@ -2,7 +2,10 @@
 <main-layout>
   <div class="p-5">
     <div class="bg-white min-h-screen rounded-xl shadow-xl text-gray-800">
-      <component :is="currentTemplate"></component>
+      <keep-alive>
+        <component :is="currentTemplate"></component>
+      </keep-alive>
+
 
 
     </div>
