@@ -6,6 +6,7 @@
         <div class="flex h-16 shrink-0 items-center">
 
          <h1>LOGO </h1>
+
         </div>
 
         <div class="h-screen overflow-y-auto p-2">
@@ -89,7 +90,7 @@
     </div>
 
     <main class="py-10 z-10">
-      <div class="px-4 sm:px-6 lg:px-8">
+      <div class="px-4 sm:px-6 lg:px-8 text-gray-800">
         <slot></slot>
       </div>
     </main>

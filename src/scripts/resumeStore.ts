@@ -21,7 +21,8 @@ export const useResumeStore=defineStore('resumeStore',{
         hobbies:useStorage('hobbies',[]),
         references:useStorage('references',[]),
         customSection:useStorage('customSection',[]),
-        professionalSummary:useStorage('professionalSummary','')
+        professionalSummary:useStorage('professionalSummary',''),
+
     }),
 
     getters:{

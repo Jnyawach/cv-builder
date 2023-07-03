@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
+        'source-code':['"Source Sans 3"','sans-serif']
 
 
       },

@@ -9162,8 +9162,8 @@ var nodeOps = {
   },
   // __UNSAFE__
   // Reason: innerHTML.
-  // Static content here can only come from compiled templates.
-  // As long as the user only uses trusted templates, this is safe.
+  // Static content here can only come from compiled designs.
+  // As long as the user only uses trusted designs, this is safe.
   insertStaticContent(content, parent, anchor, isSVG, start, end) {
     const before = anchor ? anchor.previousSibling : parent.lastChild;
     if (start && (start === end || start.nextSibling)) {

@@ -1,8 +1,8 @@
 <template>
   <div class="relative" v-on-click-outside="closeDrop">
     <button @click="dropdown=!dropdown"  type="button"
-            class="text-xs  flex  items-center w-full h-10
-            border-none rounded-lg bg-transparent px-2 py-1 w-56
+            class="text-xs  flex  items-center w-32 h-10
+            border-none rounded-lg bg-transparent px-2 py-1
     ">
       <span class="h-4 w-2 rounded-l-full" :style="'background-color:'+colorThemes.primary">
       </span>
