@@ -18,8 +18,8 @@
         leave-to-class="opacity-0"
     >
       <div v-show="dropdown" class="py-2 mt-1 absolute z-10 bg-gray-700 border-gray-200 divide-y divide-gray-100 rounded-lg
-            shadow w-full overflow-hidden ">
-        <ul class="text-sm text-white max-h-72 overflow-y-auto divide-y divide-gray-600" aria-labelledby="dropdownHoverButton">
+            shadow w-full overflow-hidden">
+        <ul class="text-sm text-white max-h-56 overflow-y-auto divide-y divide-gray-600" aria-labelledby="dropdownHoverButton">
           <li v-for="(level, index) in levels" :key="index" class="grid ">
             <button type="button" @click="selectOption(level)" class="text-start text-xs font-medium w-full h-full cursor-pointer  hover:bg-sumo-700/20 p-2">
               <span class="capitalize">{{level}}</span>

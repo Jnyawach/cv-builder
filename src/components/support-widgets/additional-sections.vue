@@ -53,7 +53,7 @@ const customSection=ref(false)
       </div>
     </div>
   </div>
-  <div v-if="resumeStore.hobbies" class="text-sm my-5 border border-gray-700 p-3 rounded-lg w-full block">
+  <div v-if="resumeStore.hobbies.name" class="text-sm my-5 border border-gray-700 p-3 rounded-lg w-full block">
     <div class="flex justify-between">
       <h6 class="text-sky-600 my-2">Hobbies</h6>
       <button @click="deleteHobby">

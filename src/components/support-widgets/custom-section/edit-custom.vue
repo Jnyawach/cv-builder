@@ -107,8 +107,8 @@ let props=defineProps({
 })
 
 const show=ref(false)
-watch(()=>props.show,()=>{
-  if (props.show){
+watch(show,()=>{
+  if (show.value){
     document.body.classList.add('overflow-y-hidden');
   }else{
     document.body.classList.remove('overflow-y-hidden');

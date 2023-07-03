@@ -12,10 +12,7 @@ const addingEducation=ref(!resumeStore.educationHistory)
     <h1 class="text-2xl font-bold text-sky-500">Education details</h1>
     <p class="my-2 font-light text-sm">Describe about your education</p>
   </div>
-  <div v-if="addingEducation" class="py-3">
-   <new-education @addingEducation="addingEducation=false"></new-education>
-  </div>
-  <div v-else>
+  <div>
     <listing-education @addingEducation="addingEducation=true"></listing-education>
   </div>
 </template>
