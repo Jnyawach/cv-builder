@@ -58,7 +58,7 @@
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Work Experience</button>
       </div>
-      <div v-if="resumeStore.step === 5" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 4" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Education</button>
       </div>
