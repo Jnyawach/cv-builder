@@ -42,6 +42,13 @@ const resumeStore=useResumeStore()
       <div v-html="education.description" class="prose max-w-full prose-ul:list-disc prose-gray-950 leading-normal" :style="`font-size: ${resumeStore.fontSize}`"></div>
     </div>
   </section>
+  <section class="px-5 py-2" v-if="resumeStore.skills.length">
+    <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Skills</h3>
+    <hr class="border-t border-black">
+    <div>
+
+    </div>
+  </section>
 </div>
 </template>
 

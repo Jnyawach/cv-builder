@@ -23,6 +23,17 @@ const workExperience=ref({
 
 const addRole=()=>{
   resumeStore.workExperience.push(workExperience.value)
+  workExperience.value={
+    title:'',
+    employer:'',
+    city:'',
+    country:'',
+    start_date:'',
+    end_date:'',
+    current_job:false,
+    description:'',
+    id:uuidv4()
+  }
   emits('close')
 }
 </script>

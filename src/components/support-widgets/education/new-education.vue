@@ -25,6 +25,17 @@ const educationHistory=ref({
 
 const addEducation=()=>{
   resumeStore.educationHistory.push(educationHistory.value)
+  educationHistory.value={
+    name:'',
+    location:'',
+    degree:'',
+    study_field:'',
+    description:'',
+    start_date:'',
+    end_date:'',
+    current_education:false,
+    id:uuidv4()
+  }
   emits('close')
 }
 </script>
