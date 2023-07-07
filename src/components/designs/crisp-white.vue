@@ -1,10 +1,50 @@
+
 <script setup lang="ts">
 import {useResumeStore} from "../../scripts/resumeStore";
 import moment from "moment";
+import {computed, onMounted, ref} from "vue";
+import {useFonts} from "../../scripts/useFonts";
+import { jsPDF } from "jspdf";
 const resumeStore=useResumeStore()
+const {fonts}=useFonts()
+
+import pdf from 'pdfjs';
+
+const doc=ref()
+const pdfLink=ref('')
+/*
+function render(){
+    doc.value=new jsPDF('p', 'mm', [297, 210])
+    doc.value.setFillColor('black')
+    doc.value.text(resumeStore.professionalSummary, 10, 10);
+
+   //output pdf
+    const buf = doc.value.output();
+    const blob = new Blob([buf], { type: 'application/pdf' });
+    pdfLink.value= URL.createObjectURL(blob);
+}
+
+ */
+
+async function  render(){
+  doc.value=new pdf.Document();
+  const buf =await doc.value.asBuffer();
+  const blob = new Blob([buf], { type: 'application/pdf' });
+  pdfLink.value= URL.createObjectURL(blob);
+}
+
+onMounted(()=>{
+  render()
+})
+
+
+
+
+
 </script>
 
 <template>
+  <!--
 <div class="text-gray-950" :class="['font-'+resumeStore.font.name ]" :style="`font-size: ${resumeStore.fontSize}`">
   <div class="text-center py-7">
     <h1  class="text-4xl my-1 font-bold">{{resumeStore.personalInformation.name}} {{resumeStore.personalInformation.surname}}</h1>
@@ -50,6 +90,16 @@ const resumeStore=useResumeStore()
     </div>
   </section>
 </div>
+-->
+  <div>
+    <!--
+    <canvas height="1122.5" width="793.7" fill="white" ref="cv" ></canvas>
+    -->
+
+    <object class="overflow-hidden" id="preview" width="100%" height="841.896" type="application/pdf" :data="pdfLink+'#toolbar=0&navpanes=0'"  >
+      <p>Insert your error message here, if the PDF cannot be displayed.</p>
+    </object>
+  </div>
 </template>
 
 <style scoped>
