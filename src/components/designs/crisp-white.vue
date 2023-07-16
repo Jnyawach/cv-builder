@@ -12,30 +12,54 @@ import pdf from 'pdfjs';
 
 const doc=ref()
 const pdfLink=ref('')
+const lineHeight=ref(1.5)
 /*
 function render(){
-    doc.value=new jsPDF('p', 'mm', [297, 210])
-    doc.value.setFillColor('black')
-    doc.value.text(resumeStore.professionalSummary, 10, 10);
-
-   //output pdf
-    const buf = doc.value.output();
-    const blob = new Blob([buf], { type: 'application/pdf' });
-    pdfLink.value= URL.createObjectURL(blob);
+  doc.value = new jsPDF('p', 'mm', [297, 210])
+  doc.value.setFontSize(24)
+  doc.value.setFont('helvetica', 'normal', 'bold')
+  doc.value.text(resumeStore.personalInformation.name + ' ' + resumeStore.personalInformation.surname, 105, 15, 'center')
+  doc.value.setFontSize(11)
+  doc.value.setFont('helvetica', 'normal', 'normal')
+  var contact = doc.value.splitTextToSize('Email: '+resumeStore.personalInformation.email+' Cellphone: '
+      +resumeStore.personalInformation.phone+' linkedin: '+resumeStore.personalInformation.linkedin, 190);
+  doc.value.text(contact,105, 25, 'center')
+  var lines = contact.length
+  var blockHeight = (lines * lineHeight.value)+35
+  doc.value.setFillColor('black')
+  doc.value.setFontSize(10)
+  doc.value.setLineHeightFactor(lineHeight.value)
+  doc.value.setFont('helvetica', 'normal', 'normal')
+  var summary = doc.value.splitTextToSize(resumeStore.professionalSummary, 190);
+  doc.value.text(summary, 10, blockHeight);
+  var nextY=(summary.length*lineHeight.value)+10
+  doc.value.setFont('helvetica', 'normal', 'bold')
+  doc.value.setFontSize(12)
+  doc.value.setTextColor('#0c4a6e')
+  doc.value.text('Skills',10,nextY+50)
+  doc.value.line(10,nextY+52,200,nextY+52,)
+  var nextY2=(nextY+60)
+  doc.value.setTextColor('black')
+  doc.value.setFontSize(11)
+  doc.value.setFont('helvetica', 'normal', 'normal')
+  doc.value.text('Expert: Microsoft Office, Excel, Adobe Design Suite',10, nextY2)
+  //output pdf
+  const buf = doc.value.output();
+  const blob = new Blob([buf], {type: 'application/pdf'});
+  pdfLink.value = URL.createObjectURL(blob);
 }
+*/
 
- */
 
-async function  render(){
-  doc.value=new pdf.Document();
-  const buf =await doc.value.asBuffer();
-  const blob = new Blob([buf], { type: 'application/pdf' });
-  pdfLink.value= URL.createObjectURL(blob);
+const generateSkills = () => {
+
 }
-
+/*
 onMounted(()=>{
   render()
 })
+*/
+
 
 
 
@@ -44,8 +68,8 @@ onMounted(()=>{
 </script>
 
 <template>
-  <!--
-<div class="text-gray-950" :class="['font-'+resumeStore.font.name ]" :style="`font-size: ${resumeStore.fontSize}`">
+
+<div style="width: 210mm" class="text-gray-950 bg-white" :class="['font-'+resumeStore.font.name ]" :style="`font-size: ${resumeStore.fontSize}`">
   <div class="text-center py-7">
     <h1  class="text-4xl my-1 font-bold">{{resumeStore.personalInformation.name}} {{resumeStore.personalInformation.surname}}</h1>
     <h3 class="text-xl font-semibold">{{resumeStore.personalInformation.profession}}</h3>
@@ -90,16 +114,14 @@ onMounted(()=>{
     </div>
   </section>
 </div>
--->
-  <div>
-    <!--
-    <canvas height="1122.5" width="793.7" fill="white" ref="cv" ></canvas>
-    -->
 
+  <!--
+  <div>
     <object class="overflow-hidden" id="preview" width="100%" height="841.896" type="application/pdf" :data="pdfLink+'#toolbar=0&navpanes=0'"  >
       <p>Insert your error message here, if the PDF cannot be displayed.</p>
     </object>
   </div>
+  -->
 </template>
 
 <style scoped>
