@@ -9,17 +9,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@tinymce/tinymce-vue": "^5.1.0",
+    "@tinymce/tinymce-vue": "^4.0.4",
     "@vueuse/components": "^10.2.0",
     "@vueuse/core": "^10.2.0",
     "events": "^3.3.0",
-    "html2pdf.js": "^0.10.1",
-    "jspdf": "^2.5.1",
+    "html2pdf.js": "^0.9.0",
     "moment": "^2.29.4",
-    "pdfjs": "^2.5.0",
     "pinia": "^2.1.4",
-    "puppeteer": "^20.8.2",
-    "puppeteer-report": "^3.1.0",
     "uuid": "^9.0.0",
     "vue": "^3.2.47",
     "vue-accessible-color-picker": "^4.1.3"

@@ -4,8 +4,9 @@ import {ref} from "vue";
 import templates from "../assets/data/templates.json"
 import fonts from "../assets/data/fonts.json";
 
+
 export const useResumeStore=defineStore('resumeStore',{
-    state: ()=>({
+    state:  ()=>({
         step: useStorage('step',1),
         doc_name:useStorage('doc_name','Untitled document'),
         resume: useStorage('resume',templates['crisp-white']),

@@ -5,37 +5,34 @@
       <div class="flex grow flex-col gap-y-5 overflow-y-auto bg-gray-800 px-6 pb-4 ">
         <div class="flex h-16 shrink-0 items-center">
 
-         <h1>LOGO </h1>
+         <h1>GRAND RESUME </h1>
 
         </div>
 
         <div class="h-screen overflow-y-auto p-2">
           <div v-if="resumeStore.step===1">
-            <resume-templates></resume-templates>
-          </div>
-          <div v-if="resumeStore.step===2">
             <personal-information></personal-information>
           </div>
-          <div v-if="resumeStore.step===3">
+          <div v-if="resumeStore.step===2">
            <professional-summary></professional-summary>
           </div>
-          <div v-if="resumeStore.step===4">
+          <div v-if="resumeStore.step===3">
             <work-experience></work-experience>
           </div>
 
-          <div v-if="resumeStore.step===5">
+          <div v-if="resumeStore.step===4">
             <education-details></education-details>
           </div>
-          <div v-if="resumeStore.step===6">
+          <div v-if="resumeStore.step===5">
             <skills></skills>
           </div>
-          <div v-if="resumeStore.step===7">
+          <div v-if="resumeStore.step===6">
            <course-details></course-details>
           </div>
-          <div v-if="resumeStore.step===8">
+          <div v-if="resumeStore.step===7">
             <additional-sections></additional-sections>
           </div>
-          <div v-if="resumeStore.step===9">
+          <div v-if="resumeStore.step===8">
             <div  class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
               <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back to edit</button>
               <button  class="btn-primary" type="button">Download</button>
@@ -46,37 +43,34 @@
       </div>
       <!--button-->
     <div>
-        <div v-if="resumeStore.step == 1" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
-        
-        <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Personal Info</button>
-      </div>
 
-      <div v-if="resumeStore.step === 2" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
-        <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
+
+      <div v-if="resumeStore.step === 1" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Professional Summary</button>
       </div>
-      <div v-if="resumeStore.step === 3" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 2" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Work Experience</button>
       </div>
-      <div v-if="resumeStore.step === 4" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 3" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Education</button>
       </div>
-      <div v-if="resumeStore.step === 5" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 4" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Skills</button>
       </div>
-      <div v-if="resumeStore.step === 6" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 5" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Courses & Certifications</button>
       </div>
-      <div v-if="resumeStore.step === 7" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 6" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Additional sections</button>
       </div>
 
-      <div v-if="resumeStore.step === 8" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
+      <div v-if="resumeStore.step === 7" class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
         <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back</button>
         <button @click="resumeStore.addStep()" class="btn-primary" type="button">Next: Preview & Download</button>
       </div>

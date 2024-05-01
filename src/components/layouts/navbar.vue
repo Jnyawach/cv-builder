@@ -1,16 +1,10 @@
 <template>
   <div class="flex justify-end w-full">
-    <div class="h-10  shadow-lg border border-gray-700  rounded-xl bg-gray-800 shadow-xl">
+    <div class="h-10 border border-gray-700  rounded-xl bg-gray-800 shadow-xl">
       <ul class=" flex w-full gap-1 justify-end divide-x divide-gray-700">
 
         <li>
           <doc-name></doc-name>
-        </li>
-        <li>
-          <button  type="button" class="text-xs  flex  items-center w-full h-10
-            border-none rounded-lg bg-transparent px-2 py-1 w-56">
-            Templates
-          </button>
         </li>
         <li>
           <font-selector></font-selector>
