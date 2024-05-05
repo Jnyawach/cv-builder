@@ -18,11 +18,44 @@
 </template>
 
 <script setup lang="ts">
-import templates from "../../assets/data/templates.json"
+
 import {ref} from "vue";
 import {useResumeStore} from "../../scripts/resumeStore";
 const resumeStore=useResumeStore()
-const availableTemplates=ref(templates)
+const availableTemplates=ref([
+  {
+  "name": "Crisp White",
+      "template":"crisp-white",
+      "id": 1,
+      "image": "/templates/crisp-white.png",
+      "primary":"#a16207",
+      "secondary":"#065f46"
+},
+{
+  "name": "Cascading cream",
+      "template":"cascading-cream",
+      "id": 2,
+      "image": "/templates/cascading-cream.png",
+      "primary":"#a16207",
+      "secondary":"#065f46"
+},
+{
+  "name": "Cubic Black",
+      "template":"cubic-black",
+      "id": 3,
+      "image": "/templates/cubic-black.png",
+      "primary":"#a16207",
+      "secondary":"#065f46"
+},
+ {
+  "name": "Enfold Blue",
+      "template":"enfold-blue",
+      "id": 4,
+      "image": "/templates/enfold-blue.png",
+      "primary":"#a16207",
+      "secondary":"#065f46"
+}
+])
 
 const currentTemplate=ref( resumeStore.template)
 const selectTemplate=(template:any)=>{

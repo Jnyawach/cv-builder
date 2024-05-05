@@ -1,4 +1,4 @@
-<script setup lang="js">
+<script setup lang="ts">
 import {useResumeStore} from "../../scripts/resumeStore";
 const resumeStore=useResumeStore()
 import {ref} from "vue";
