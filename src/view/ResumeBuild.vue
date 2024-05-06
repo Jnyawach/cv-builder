@@ -16,7 +16,9 @@ import {ref} from "vue";
 import MainLayout from "../components/layouts/main-layout.vue";
 import {useResumeStore} from "../scripts/resumeStore";
 import CrispWhite from "../components/designs/crisp-white.vue";
-import html2pdf from 'html2pdf.js';
+//@ts-ignore
+import * as html2pdf from 'html2pdf.js';
+
 
 
 const resumeStore=useResumeStore()

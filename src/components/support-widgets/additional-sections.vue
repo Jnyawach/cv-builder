@@ -9,23 +9,30 @@ import moment from "moment"
 import EditCustom from "./custom-section/edit-custom.vue";
 const resumeStore=useResumeStore()
 const newLanguage=ref(false)
-const deleteLanguage=(id:number)=>{
+const deleteLanguage=(id:string)=>{
   resumeStore.languages=resumeStore.languages.filter((item)=>item.id!==id)
 }
 
 //hobbies
 const newHobbies=ref(false)
 const deleteHobby=()=>{
-  resumeStore.hobbies=null
+  resumeStore.hobbies={
+    name:'',
+    id:''
+  }
 }
 //reference
 const createReference=ref(false)
-const deleteReference=(id:number)=>{
+const deleteReference=(id:string)=>{
   resumeStore.references=resumeStore.references.filter((item)=>item.id!==id)
 }
 
 //custom section
 const customSection=ref(false)
+
+const deleteSection=(id:string)=>{
+  resumeStore.customSection=resumeStore.customSection.filter((item)=>item.id!==id)
+}
 </script>
 
 <template>

@@ -5,7 +5,7 @@
   </div>
 
   <div class="grid md:grid-cols-2 my-5 gap-2">
-    <div v-for="template in availableTemplates" :key="template">
+    <div v-for="template in availableTemplates" :key="template.id">
       <img :src="template.image" :alt="template.name" @click="selectTemplate(template)"
            class="cursor-pointer border rounded-lg shadow-lg hover:shadow-xl hover:border-sky-600"
            :class="[currentTemplate.id===template.id?'border-2 shadow-xl border-sky-600':'']"
@@ -24,36 +24,36 @@ import {useResumeStore} from "../../scripts/resumeStore";
 const resumeStore=useResumeStore()
 const availableTemplates=ref([
   {
-  "name": "Crisp White",
-      "template":"crisp-white",
-      "id": 1,
-      "image": "/templates/crisp-white.png",
-      "primary":"#a16207",
-      "secondary":"#065f46"
+  name: "Crisp White",
+      template:"crisp-white",
+      id: '1',
+      image: "/templates/crisp-white.png",
+      primary:"#a16207",
+      secondary:"#065f46"
 },
 {
-  "name": "Cascading cream",
-      "template":"cascading-cream",
-      "id": 2,
-      "image": "/templates/cascading-cream.png",
-      "primary":"#a16207",
-      "secondary":"#065f46"
+  name: "Cascading cream",
+      template:"cascading-cream",
+      id: '2',
+      image: "/templates/cascading-cream.png",
+      primary:"#a16207",
+      secondary:"#065f46"
 },
 {
-  "name": "Cubic Black",
-      "template":"cubic-black",
-      "id": 3,
-      "image": "/templates/cubic-black.png",
-      "primary":"#a16207",
-      "secondary":"#065f46"
+  name: "Cubic Black",
+      template:"cubic-black",
+      id: '3',
+      image: "/templates/cubic-black.png",
+      primary:"#a16207",
+      secondary:"#065f46"
 },
  {
-  "name": "Enfold Blue",
-      "template":"enfold-blue",
-      "id": 4,
-      "image": "/templates/enfold-blue.png",
-      "primary":"#a16207",
-      "secondary":"#065f46"
+  name: "Enfold Blue",
+      template:"enfold-blue",
+      id: '4',
+      image: "/templates/enfold-blue.png",
+      primary:"#a16207",
+      secondary:"#065f46"
 }
 ])
 

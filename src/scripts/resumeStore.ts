@@ -3,6 +3,7 @@ import {useStorage} from "@vueuse/core";
 import {ref} from "vue";
 import templates from "../assets/data/templates.json"
 import fonts from "../assets/data/fonts.json";
+import {v4 as uuidv4} from "uuid";
 
 interface Skill{
     name:string,
@@ -39,6 +40,45 @@ interface Course{
     organization:string
     start_date:string
     end_date:string
+    id:string
+}
+
+interface Information{
+    name:string,
+    surname:string,
+    profession:string,
+    postalCode:string,
+    phone:string,
+    email:string,
+    website:string,
+    linkedin:string,
+    twitter:string
+    postal_code:string,
+    country:string,
+    city:string
+}
+
+interface Reference{
+    name:string,
+    company:string,
+    email:string,
+    phone:string,
+    id:string
+}
+
+interface Language{
+    name:string,
+    level:string,
+    id:string
+}
+
+interface Custom{
+    name:string,
+    location:string,
+    start_date:string,
+    end_date:string,
+    description:string,
+    id:string
 }
 
 
@@ -49,27 +89,36 @@ export const useResumeStore=defineStore('resumeStore',{
         resume: useStorage('resume',templates['crisp-white']),
         template:useStorage('template',{
             primary:'',
-            secondary:''
+            secondary:'',
+            id:''
         }),
         fontSize:useStorage('fontSize','11px'),
-        personalInformation:useStorage('personaInformation',{
-            email:'',
+        personalInformation:useStorage<Information>('personaInformation',{
             name:'',
             surname:'',
             profession:'',
+            postalCode:'',
             phone:'',
+            email:'',
+            website:'',
             linkedin:'',
-            website:''
+            twitter:'',
+            postal_code:'',
+            country:'',
+            city:''
         }),
         font:useStorage('font',fonts['Source code pro']),
         workExperience : useStorage<Role[]>('workExperience',[]),
-        educationHistory:useStorage<Education>('educationHistory',[]),
+        educationHistory:useStorage<Education[]>('educationHistory',[]),
         skills:useStorage<Skill[]>('skills',[]),
         courses:useStorage<Course[]>('courses',[]),
-        languages:useStorage('languages',[]),
-        hobbies:useStorage('hobbies',[]),
-        references:useStorage('references',[]),
-        customSection:useStorage('customSection',[]),
+        languages:useStorage<Language[]>('languages',[]),
+        hobbies:useStorage('hobbies',{
+            name:'',
+            id:''
+        }),
+        references:useStorage<Reference[]>('references',[]),
+        customSection:useStorage<Custom[]>('customSection',[]),
         professionalSummary:useStorage('professionalSummary',''),
 
     }),

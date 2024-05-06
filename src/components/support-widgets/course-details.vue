@@ -5,7 +5,7 @@ import {ref} from "vue";
 import {useResumeStore} from "../../scripts/resumeStore";
 const resumeStore=useResumeStore()
 
-const deleteCourse=(id:number)=>{
+const deleteCourse=(id:string)=>{
   resumeStore.courses=resumeStore.courses.filter((item)=>item.id!==id)
 }
 const addingCourse=ref(false)

@@ -29,7 +29,7 @@ const addNewSkill=()=>{
   skillError.value=false
 }
 
-const deleteSkill =(id:number)=>{
+const deleteSkill =(id:string)=>{
   resumeStore.skills=resumeStore.skills.filter((item)=>item.id!==id)
 }
 </script>

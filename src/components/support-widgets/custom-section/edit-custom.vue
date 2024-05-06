@@ -103,7 +103,10 @@ import {useResumeStore} from "../../../scripts/resumeStore";
 import Editor from "@tinymce/tinymce-vue";
 const resumeStore=useResumeStore()
 let props=defineProps({
-  activity:Object
+  activity:{
+    type:Object,
+    required:true
+  }
 })
 
 const show=ref(false)

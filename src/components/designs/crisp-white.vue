@@ -27,7 +27,7 @@ const resumeStore=useResumeStore()
     <section class="px-5 py-2" v-if="resumeStore.workExperience.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Experience</h3>
       <hr class="border-t border-black">
-      <div class="py-2" v-for="role in resumeStore.workExperience as Role[]" :key="role.id">
+      <div class="py-2" v-for="role in resumeStore.workExperience" :key="role.id">
         <div class="flex justify-between">
           <h5 class="uppercase font-medium">{{role.title}} </h5>
           <h5 class="font-bold"><span>{{moment(role.start_date).format('MMM YYYY')}}</span>- <span v-if="role.current_job">Current</span><span v-else>{{moment(role.end_date).format('MMM YYYY')}}</span></h5>
@@ -39,7 +39,7 @@ const resumeStore=useResumeStore()
     <section class="px-5 py-2" v-if="resumeStore.educationHistory.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Education</h3>
       <hr class="border-t border-black">
-      <div class="py-2" v-for="education in resumeStore.educationHistory as Education[]" :key="education.id">
+      <div class="py-2" v-for="education in resumeStore.educationHistory" :key="education.id">
         <div class="flex justify-between">
           <h5 class="uppercase font-medium">{{education.study_field}} </h5>
           <h5 class="font-bold"><span>{{moment(education.start_date).format('MMM YYYY')}}</span>- <span v-if="education.current_education">Current</span><span v-else>{{moment(education.end_date).format('MMM YYYY')}}</span></h5>
@@ -52,7 +52,7 @@ const resumeStore=useResumeStore()
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Skills</h3>
       <hr class="border-t border-black">
       <div class="my-2 flex gap-3 flex-grow flex-wrap">
-        <div v-for="skill in resumeStore.skills as Skill[]">
+        <div v-for="skill in resumeStore.skills">
           <span class="">&#8226; {{skill.name}}</span>
         </div>
 
@@ -64,7 +64,7 @@ const resumeStore=useResumeStore()
       <div class="my-2">
         <div>
           <ul class="space-y-2">
-            <li v-for="course in resumeStore.courses as Course[]">
+            <li v-for="course in resumeStore.courses">
             <span class="">
               {{course.course_name}} at {{course.organization}}:
               <span class="font-bold">{{moment(course.start_date).format('MMM YYYY')}}-{{moment(course.end_date).format('MMM YYYY')}}</span>
