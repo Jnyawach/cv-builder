@@ -2,6 +2,7 @@
   <main-layout>
     <div class="p-5">
       <div ref="cv" id="resume"  class="shadow-xl text-gray-800 bg-white">
+        <!--Insert templates-->
 
         <CrispWhite></CrispWhite>
       </div>
@@ -17,12 +18,15 @@ import MainLayout from "../components/layouts/main-layout.vue";
 import {useResumeStore} from "../scripts/resumeStore";
 import CrispWhite from "../components/designs/crisp-white.vue";
 //@ts-ignore
+
 import * as html2pdf from 'html2pdf.js';
 
 
 
 const resumeStore=useResumeStore()
 const cv=ref(null)
+
+//Export resume to PDF using htmpl2pdf plugin
 
 const exportToPDF=async ()=>{
   var opt = {

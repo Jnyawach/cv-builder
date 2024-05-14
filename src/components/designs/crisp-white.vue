@@ -10,7 +10,8 @@ const resumeStore=useResumeStore()
 
 <template>
 
-<div class="flex justify-center">
+<div class="flex justify-center">.
+  <!--Personal information section-->
   <div style="width: 210mm" class="text-gray-950 bg-white" :class="['font-'+resumeStore.font.name ]" :style="`font-size: ${resumeStore.fontSize}`">
     <div class="text-center py-7">
       <h1  class="text-4xl my-1 font-bold">{{resumeStore.personalInformation.name}} {{resumeStore.personalInformation.surname}}</h1>
@@ -21,9 +22,13 @@ const resumeStore=useResumeStore()
         <span v-if="resumeStore.personalInformation.linkedin" class="ml-2"><span class="font-medium" :style="`color:${resumeStore.template.primary}`">Linkedin: </span>{{resumeStore.personalInformation.linkedin}}</span>
       </p>
     </div>
+
+    <!-- Professional summary section-->
     <div class="my-5 px-5">
       <p>{{resumeStore.professionalSummary}}</p>
     </div>
+
+    <!-- Work experience section-->
     <section class="px-5 py-2" v-if="resumeStore.workExperience.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Experience</h3>
       <hr class="border-t border-black">
@@ -36,6 +41,8 @@ const resumeStore=useResumeStore()
         <div v-html="role.description" class="prose max-w-full prose-ul:list-disc prose-gray-950 leading-normal" :style="`font-size: ${resumeStore.fontSize}`"></div>
       </div>
     </section>
+
+    <!-- Eduction history section-->
     <section class="px-5 py-2" v-if="resumeStore.educationHistory.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Education</h3>
       <hr class="border-t border-black">
@@ -48,6 +55,7 @@ const resumeStore=useResumeStore()
         <div v-html="education.description" class="prose max-w-full prose-ul:list-disc prose-gray-950 leading-normal" :style="`font-size: ${resumeStore.fontSize}`"></div>
       </div>
     </section>
+    <!-- Skills section-->
     <section class="px-5 py-2" v-if="resumeStore.skills.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Skills</h3>
       <hr class="border-t border-black">
@@ -58,6 +66,8 @@ const resumeStore=useResumeStore()
 
       </div>
     </section>
+
+    <!-- courses section-->
     <section class="px-5 py-2" v-if="resumeStore.courses.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Courses & Certifications</h3>
       <hr class="border-t border-black">
