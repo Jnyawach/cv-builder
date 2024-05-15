@@ -12,28 +12,38 @@
         </div>
 
         <div class="h-screen overflow-y-auto p-2">
+          <!-- Personal Information form -->
           <div v-if="resumeStore.step===1">
             <personal-information></personal-information>
           </div>
+          <!-- Professional Summary form -->
           <div v-if="resumeStore.step===2">
            <professional-summary></professional-summary>
           </div>
+          <!-- Work Experience form -->
           <div v-if="resumeStore.step===3">
             <work-experience></work-experience>
           </div>
 
+          <!-- Education form -->
           <div v-if="resumeStore.step===4">
             <education-details></education-details>
           </div>
+
+          <!-- Skills form -->
           <div v-if="resumeStore.step===5">
             <skills></skills>
           </div>
+
+          <!-- Course form -->
           <div v-if="resumeStore.step===6">
            <course-details></course-details>
           </div>
+          <!-- Additional form -->
           <div v-if="resumeStore.step===7">
             <additional-sections></additional-sections>
           </div>
+          <!-- Download your resume-->
           <div v-if="resumeStore.step===8">
             <div  class="border-t border-gray-600 py-2 px-3 gap-2 flex justify-end drop-shadow">
               <button v-if="resumeStore.step > 1" @click="resumeStore.reduceStep()" class="btn-primary-outline" type="button">Back to edit</button>
@@ -43,7 +53,7 @@
         </div>
 
       </div>
-      <!--button-->
+      <!--Control for data entry steps-->
     <div>
 
 

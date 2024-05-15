@@ -13,12 +13,12 @@ const resumeStore=useResumeStore()
 <div class="flex justify-center">.
   <!--Personal information section-->
   <div style="width: 210mm" class="text-gray-950 bg-white" :class="['font-'+resumeStore.font.name ]" :style="`font-size: ${resumeStore.fontSize}`">
-    <div class="text-center py-7">
+    <div v-if="resumeStore.personalInformation" class="text-center py-7">
       <h1  class="text-4xl my-1 font-bold">{{resumeStore.personalInformation.name}} {{resumeStore.personalInformation.surname}}</h1>
       <h3 class="text-xl font-semibold">{{resumeStore.personalInformation.profession}}</h3>
       <p class="my-2 font-medium text-sm">
-        <span><span class="font-medium" :style="`color:${resumeStore.template.primary}`">Email: </span>{{resumeStore.personalInformation.email}}</span>
-        <span class="ml-2"><span class="font-medium" :style="`color:${resumeStore.template.primary}`">Phone: </span>{{resumeStore.personalInformation.phone}}</span>
+        <span v-if="resumeStore.personalInformation.email"><span class="font-medium" :style="`color:${resumeStore.template.primary}`">Email: </span>{{resumeStore.personalInformation.email}}</span>
+        <span v-if="resumeStore.personalInformation.phone" class="ml-2"><span class="font-medium" :style="`color:${resumeStore.template.primary}`">Phone: </span>{{resumeStore.personalInformation.phone}}</span>
         <span v-if="resumeStore.personalInformation.linkedin" class="ml-2"><span class="font-medium" :style="`color:${resumeStore.template.primary}`">Linkedin: </span>{{resumeStore.personalInformation.linkedin}}</span>
       </p>
     </div>
