@@ -8,7 +8,12 @@
       <router-link to="/">
         <h1 class="font-bold">GRAND RESUME</h1>
       </router-link>
-      <ul>
+      <ul class="flex gap-3 items-center">
+        <li>
+          <router-link to="/about">
+            About
+          </router-link>
+        </li>
         <li>
           <router-link to="/resume-app">
             <button class="btn-primary">

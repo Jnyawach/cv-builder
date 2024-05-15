@@ -21,20 +21,25 @@ const features = [
 
 <template>
   <header class="p-5 border-b border-gray-800">
-   <nav class="flex justify-between items-center ">
-     <router-link to="/">
-       <h1 class="font-bold">GRAND RESUME</h1>
-     </router-link>
-     <ul>
-       <li>
-         <router-link to="/resume-app">
-          <button class="btn-primary">
-            Build your resume
-          </button>
-         </router-link>
-       </li>
-     </ul>
-   </nav>
+    <nav class="flex justify-between items-center ">
+      <router-link to="/">
+        <h1 class="font-bold">GRAND RESUME</h1>
+      </router-link>
+      <ul class="flex gap-3 items-center">
+        <li>
+          <router-link to="/about">
+            About
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/resume-app">
+            <button class="btn-primary">
+              Build your resume
+            </button>
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </header>
   <main  class="max-w-[1280px] mx-auto">
     <section class="py-14 px-3 md:px-10">
