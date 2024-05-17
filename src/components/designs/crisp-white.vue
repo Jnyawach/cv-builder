@@ -117,7 +117,7 @@ const resumeStore=useResumeStore()
     </section>
 
     <!-- References-->
-    <section class="px-5 py-2" v-if="resumeStore.references">
+    <section class="px-5 py-2" v-if="resumeStore.references.length">
       <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">References</h3>
       <hr class="border-t border-black">
       <div class="my-2">
