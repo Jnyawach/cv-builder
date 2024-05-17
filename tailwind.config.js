@@ -8,7 +8,9 @@ export default {
     extend: {
       fontFamily: {
         'inter': ['Inter', 'sans-serif'],
-        'source-code':['"Source Sans 3"','sans-serif']
+        'source':['"Source Sans 3"','sans-serif'],
+        'roboto':['Roboto','sans-serif'],
+        'raleway':['Raleway','sans-serif']
 
 
       },

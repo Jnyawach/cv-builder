@@ -63,6 +63,7 @@ interface Reference{
     company:string,
     email:string,
     phone:string,
+    profession:string,
     id:string
 }
 
@@ -79,6 +80,11 @@ interface Custom{
     end_date:string,
     description:string,
     id:string
+}
+
+interface Hobbies{
+    name:string;
+    id:string;
 }
 
 
@@ -113,10 +119,7 @@ export const useResumeStore=defineStore('resumeStore',{
         skills:useStorage<Skill[]>('skills',[]),
         courses:useStorage<Course[]>('courses',[]),
         languages:useStorage<Language[]>('languages',[]),
-        hobbies:useStorage('hobbies',{
-            name:'',
-            id:''
-        }),
+        hobbies:useStorage<any>('hobbies',{}),
         references:useStorage<Reference[]>('references',[]),
         customSection:useStorage<Custom[]>('customSection',[]),
         professionalSummary:useStorage('professionalSummary',''),

@@ -58,6 +58,11 @@
                 </div>
 
               </div>
+              <div class="grid  my-3">
+                <label for="profession" class="resume-label">Profession:</label>
+                <input v-model="addReference.profession" id="profession" type="text"
+                       class="resume-input" placeholder="e.g Senior Marketer">
+              </div>
               <div class="my-2 flex justify-end">
                 <button type="submit" class="btn-primary">Save</button>
               </div>
@@ -95,6 +100,7 @@ const addReference=ref({
   company:'',
   email:'',
   phone:'',
+  profession:'',
   id:uuidv4()
 })
 
@@ -105,6 +111,7 @@ const addNewHobby=()=>{
     company:'',
     email:'',
     phone:'',
+    profession:'',
     id:uuidv4()
   }
   emits('close')

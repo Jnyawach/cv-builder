@@ -10,9 +10,9 @@ const resumeStore=useResumeStore()
 
 <template>
 
-<div class="flex justify-center">.
+<div class="flex justify-center ">.
   <!--Personal information section-->
-  <div style="width: 210mm" class="text-gray-950 bg-white" :class="['font-'+resumeStore.font.name ]" :style="`font-size: ${resumeStore.fontSize}`">
+  <div style="width: 210mm" class="text-gray-950 bg-white "  :style="`font-size: ${resumeStore.fontSize}; font-family: ${resumeStore.font.identifier??'inter'};`">
     <div v-if="resumeStore.personalInformation" class="text-center py-7">
       <h1  class="text-4xl my-1 font-bold">{{resumeStore.personalInformation.name}} {{resumeStore.personalInformation.surname}}</h1>
       <h3 class="text-xl font-semibold">{{resumeStore.personalInformation.profession}}</h3>
@@ -84,6 +84,66 @@ const resumeStore=useResumeStore()
           </ul>
         </div>
 
+      </div>
+    </section>
+
+    <!--Languages section-->
+
+    <section class="px-5 py-2" v-if="resumeStore.languages.length">
+      <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Languages</h3>
+      <hr class="border-t border-black">
+      <div class="my-2">
+        <div>
+          <ul class="flex gap-3">
+            <li class="" v-for="language in resumeStore.languages">
+              <span><span class="font-medium ">{{language.name}}</span>: {{language.level}}</span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hobbies-->
+    <section class="px-5 py-2" v-if="resumeStore.hobbies && resumeStore.hobbies.name">
+      <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">Hobbies</h3>
+      <hr class="border-t border-black">
+      <div class="my-2">
+        <div>
+          <p>{{resumeStore.hobbies.name}}</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- References-->
+    <section class="px-5 py-2" v-if="resumeStore.references">
+      <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">References</h3>
+      <hr class="border-t border-black">
+      <div class="my-2">
+        <ul class="space-y-2">
+          <li v-for="reference in resumeStore.references">
+            <h6 class="font-medium">{{reference.name}}</h6>
+            <p>{{reference.profession}} at {{reference.company}}</p>
+            <p>Email: {{reference.phone}}</p>
+            <p>Call: {{reference.email}}</p>
+
+
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- Custom section-->
+    <section class="px-5 py-2" v-if="resumeStore.customSection">
+      <div v-for="section in resumeStore.customSection">
+        <h3 class="my-2 font-bold text-[12pt]" :style="`color:${resumeStore.template.primary}`">{{section.name}}</h3>
+        <hr class="border-t border-black">
+        <div class="my-2">
+          <p v-if="section.description" v-html="section.description"></p>
+
+      </div>
       </div>
     </section>
   </div>
